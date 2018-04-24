@@ -19,12 +19,12 @@ class Www3Killer {
     }
 
     function activate() {
-        //create CPT
-        //flush rewrite rules
+        $this->custom_post_type();
+        flush_rewrite_rules();
     }
 
     function deactivate() {
-        //flush rewrite rules
+        flush_rewrite_rules();
     }
 
     function uninstall() {
@@ -32,7 +32,7 @@ class Www3Killer {
     }
 
     function custom_post_type() {
-        register_post_type('book', ['public' => 'true']);
+        register_post_type('book', ['public' => true, 'label' => 'Books']);
     }
     
 }
