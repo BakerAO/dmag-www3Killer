@@ -10,7 +10,7 @@ if(!defined('WP_UNINSTALL_PLUGIN')){
 // }
 
 // Access the database with SQL
-global $wpdb;
-$wpdb->query("DELETE FROM wp_posts WHERE post_type = 'book'");
-$wpdb->query("DELETE FROM wp_postmeta WHERE post_ID NOT IN (SELECT id FROM wp_posts)");
-$wpdb->query("DELETE FROM wp_term_relationships WHERE object_id NOT IN (SELECT id FROM wp_posts)");
+// global $wpdb;
+// $wpdb->query("DELETE FROM wp_posts WHERE post_type = 'book'");
+// $wpdb->query("DELETE FROM wp_postmeta WHERE post_ID NOT IN (SELECT id FROM wp_posts)");
+// $wpdb->query("DELETE FROM wp_term_relationships WHERE object_id NOT IN (SELECT id FROM wp_posts)");

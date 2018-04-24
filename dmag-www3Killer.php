@@ -15,7 +15,7 @@ if (!defined('ABSPATH')){
 
 class Www3Killer {
     function __construct() {
-        add_action('init', array($this, 'custom_post_type'));
+        // add_action('init', array($this, 'custom_post_type'));
     }
 
     function register() {
@@ -23,7 +23,7 @@ class Www3Killer {
     }
 
     function activate() {
-        $this->custom_post_type();
+        // $this->custom_post_type();
         flush_rewrite_rules();
     }
 
@@ -31,9 +31,9 @@ class Www3Killer {
         flush_rewrite_rules();
     }
 
-    function custom_post_type() {
-        register_post_type('book', ['public' => true, 'label' => 'Books']);
-    }
+    // function custom_post_type() {
+    //     register_post_type('book', ['public' => true, 'label' => 'Books']);
+    // }
 
     function enqueue() {
         wp_enqueue_style('font-awesome', plugins_url('/styles/font-awesome.min.css', __FILE__));
