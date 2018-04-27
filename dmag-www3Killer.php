@@ -43,7 +43,7 @@ class Www3Killer {
     // bobby2.dmagazine.com/external/Morelikethis?id=blog:interactive . $post->id
 
     function enqueue() {
-        echo site_url();
+        var_dump(site_url());
         if(site_url() == "https://healthcare.dmagazine.com") {
             // Healthcare
             // themes/healthcare-bootstrap/header.php
