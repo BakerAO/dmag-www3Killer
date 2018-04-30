@@ -12,7 +12,7 @@ Text Domain: dmag-www3Killer
 if (!defined('ABSPATH')){
     die;
 }
-var_dump(wp_get_theme());
+var_dump(wp_get_theme()->name);
 class Www3Killer {
     function __construct() {
     }
@@ -37,7 +37,7 @@ class Www3Killer {
     // bobby2.dmagazine.com/external/Morelikethis?id=blog:interactive . $post->id
 
     function enqueue() {
-        //if(wp_get_theme()) {
+        if(wp_get_theme()->name == 'D HealthCare Daily - Bootstrap') {
             // Healthcare
             // themes/healthcare-bootstrap/header.php
             wp_enqueue_style('font-awesome', plugins_url('/styles/font-awesome.min.css', __FILE__));
@@ -46,7 +46,7 @@ class Www3Killer {
             // themes/healthcare-bootstrap/functions.php
             wp_enqueue_script('jquery.cookie', plugins_url('/scripts/jquery.cookie.js', __FILE__));
             wp_enqueue_script('jquery.DefaultText', plugins_url('/scripts/jquery.DefaultText.js', __FILE__));
-        //}
+        }
     }
 }
 
