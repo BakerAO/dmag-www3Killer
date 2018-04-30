@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: dmag-www3Killer
-Description: Killer of www3. Saver of $1400
+Description: Killer of www3. Saver of $1400.
 Version: 1.0.0
 Author: Dmagazine
 Author URI: https:www.dmagazine.com
@@ -12,10 +12,9 @@ Text Domain: dmag-www3Killer
 if (!defined('ABSPATH')){
     die;
 }
-
+var_dump(wp_get_theme());
 class Www3Killer {
     function __construct() {
-        // add_action('init', array($this, 'custom_post_type'));
     }
 
     function register() {
@@ -23,17 +22,12 @@ class Www3Killer {
     }
 
     function activate() {
-        // $this->custom_post_type();
         flush_rewrite_rules();
     }
 
     function deactivate() {
         flush_rewrite_rules();
     }
-
-    // function custom_post_type() {
-    //     register_post_type('book', ['public' => true, 'label' => 'Books']);
-    // }
     
     // Interactive
     // bobby2.dmagazine.com/content/assets/styles/blog.css
@@ -43,8 +37,7 @@ class Www3Killer {
     // bobby2.dmagazine.com/external/Morelikethis?id=blog:interactive . $post->id
 
     function enqueue() {
-        var_dump(site_url());
-        if(site_url() == "https://healthcare.dmagazine.com") {
+        //if(wp_get_theme()) {
             // Healthcare
             // themes/healthcare-bootstrap/header.php
             wp_enqueue_style('font-awesome', plugins_url('/styles/font-awesome.min.css', __FILE__));
@@ -53,7 +46,7 @@ class Www3Killer {
             // themes/healthcare-bootstrap/functions.php
             wp_enqueue_script('jquery.cookie', plugins_url('/scripts/jquery.cookie.js', __FILE__));
             wp_enqueue_script('jquery.DefaultText', plugins_url('/scripts/jquery.DefaultText.js', __FILE__));
-        }
+        //}
     }
 }
 
