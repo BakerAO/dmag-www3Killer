@@ -12,6 +12,7 @@ Text Domain: dmag-www3Killer
 if (!defined('ABSPATH')){
     die;
 }
+
 var_dump(wp_get_theme()->name);
 class Www3Killer {
     function __construct() {
@@ -34,7 +35,6 @@ class Www3Killer {
         if(wp_get_theme()->name == 'D HealthCare Daily - Bootstrap') {
             // themes/healthcare-bootstrap/header.php
             wp_enqueue_style('font-awesome', plugins_url('/styles/font-awesome.min.css', __FILE__));
-            // themes/healthcare-bootstrap/header.php
             wp_enqueue_script('dmag', plugins_url('/scripts/dmag.js', __FILE__));
             // themes/healthcare-bootstrap/functions.php
             wp_enqueue_script('jquery.cookie', plugins_url('/scripts/jquery.cookie.js', __FILE__));
@@ -43,10 +43,12 @@ class Www3Killer {
 
         // Interactive
         if(wp_get_theme()->name == 'Interactive - Bootstrap - Bobby') {
+            // themes/interactive-boostrap-bobby/header.php
             wp_enqueue_style('blog', plugins_url('/styles/blog.css', __FILE__));
+            wp_enqueue_style('font-awesome', plugins_url('/styles/font-awesome.min.css', __FILE__));
+            wp_enqueue_style('dmagazine', plugins_url('/styles/dmagazine.css', __FILE__));
+            wp_enqueue_style('js-header', plugins_url('/scripts/js-header.js', __FILE__));
         }
-
-
     }
 }
 
@@ -60,4 +62,3 @@ register_activation_hook(__FILE__, array($www3Killer, 'activate'));
 
 //deactivation
 register_deactivation_hook(__FILE__, array($www3Killer, 'deactivate'));
-
